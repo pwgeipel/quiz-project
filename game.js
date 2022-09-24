@@ -42,7 +42,19 @@ nextQuestion = () => {
     answers.forEach(answer => {
         var number = answer.dataset["number"];
         answer.innerText = currentQuestion["answer" + number];
-    })
+    });
+    availableQuestions.splice(questionIndex, 1);
+
+    acceptAnswers = true;
 }
+answers.forEach(answer => {
+    answer.addEventListener("click", click => {
+        var choice = click.target;
+        var selectedAnswer = choice.dataset["number"]
+        console.log(selectedAnswer)
+        nextQuestion();
+
+    })
+})
 
 beginGame ();
