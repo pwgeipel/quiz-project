@@ -1,0 +1,28 @@
+:root {
+    background-color: azure;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+.container {
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
