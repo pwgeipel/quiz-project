@@ -1,0 +1,7 @@
+.answer-box {
+    width: 100%;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+}
