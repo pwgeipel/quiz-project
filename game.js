@@ -10,18 +10,18 @@ let = currentQuestion = {};
 let questions = [
     {
         question: "Which of the following was NOT directed by Charlie Chaplin?",
-        answer1: "The Gold Rush",
-        answer2: "Modern Times",
-        answer3: "The General",
-        answer4: "City Lights",
+        answer1: "1. The Gold Rush",
+        answer2: "2. Modern Times",
+        answer3: "3. The General",
+        answer4: "4. City Lights",
         correctAnswer: 3
     },
     {
         question: "In what year was Apple founded?",
-        answer1: "1975",
-        answer2: "1976",
-        answer3: "1977",
-        answer4: "1978",
+        answer1: "1. 1975",
+        answer2: "2. 1976",
+        answer3: "3. 1977",
+        answer4: "4. 1978",
         correctAnswer: 2
     }
 ]
