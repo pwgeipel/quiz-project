@@ -1,13 +1,15 @@
 var question = document.getElementById('question');
 var answers = Array.from(document.getElementsByClassName("answer-text"));
 // const scoreText = document.getElementById('score');
-
-var timeLeft = 15;
+var timerEl = document.querySelector('.timer-count')
+var timeLeft = 60;
 var intervalId
 
 function startCountdown() {
-    setInterval(function() {
-
+    clearInterval(intervalId)
+    intervalId = setInterval(function() {
+    timeLeft--
+    timerEl.textContent = timeLeft
     }, 1000)
 }
 
@@ -44,6 +46,7 @@ beginGame = () => {
     questionCounter = 0;
     availableQuestions = [...questions]
     nextQuestion ();
+    startCountdown();
 }
 
 nextQuestion = () => {
