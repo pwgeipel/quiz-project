@@ -1,5 +1,5 @@
 :root {
-    background-color: azure;
+    background-color: rgb(112, 231, 231);
 }
 
 * {
@@ -21,7 +21,7 @@ h2 {
     width: 100vh;
     height: 100vh;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -39,4 +39,10 @@ h2 {
     text-decoration: none;
     margin: 5px;
     text-align: center;
+}
+
+.verdict {
+    font-size: 20px;
+    color: gray;
+    height: 10px;
 }

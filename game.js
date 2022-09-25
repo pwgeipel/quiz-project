@@ -26,6 +26,8 @@ let questions = [
     }
 ]
 
+
+
 beginGame = () => {
     score = 0;
     questionCounter = 0;
@@ -34,6 +36,10 @@ beginGame = () => {
 }
 
 nextQuestion = () => {
+    if (availableQuestions.length === 0) {
+        return window.location.assign("/totalscore.html");
+    }
+    
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -52,7 +58,27 @@ answers.forEach(answer => {
         var choice = click.target;
         var selectedAnswer = choice.dataset["number"]
         console.log(selectedAnswer)
-        nextQuestion();
+        
+        
+        
+        if (selectedAnswer === currentQuestion.answer) {
+            // document.getElementById("correct").innerText = "Correct!";
+            verdict = "Correct!";
+        } else {
+            verdict = "Wrong!"
+        }
+
+
+
+        document.getElementsByClassName("verdict").innerText = verdict;
+        
+               
+        // nextQuestion();
+        
+        const reload = setTimeout(nextQuestion, 3000);
+
+
+
 
     })
 })
