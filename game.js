@@ -2,7 +2,14 @@ var question = document.getElementById('question');
 var answers = Array.from(document.getElementsByClassName("answer-text"));
 // const scoreText = document.getElementById('score');
 
+var timeLeft = 15;
+var intervalId
 
+function startCountdown() {
+    setInterval(function() {
+
+    }, 1000)
+}
 
 const wrongTime = 10;
 let acceptAnswers = true;
