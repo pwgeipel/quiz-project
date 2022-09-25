@@ -2,7 +2,7 @@ var question = document.getElementById('question');
 var answers = Array.from(document.getElementsByClassName("answer-text"));
 // const scoreText = document.getElementById('score');
 var timerEl = document.querySelector('.timer-count')
-var timeLeft = 60;
+var timeLeft = 30;
 var intervalId
 
 function startCountdown() {
@@ -11,6 +11,10 @@ function startCountdown() {
     timeLeft--
     timerEl.textContent = timeLeft
     }, 1000)
+    if (timeLeft === 0) {
+        // clearInterval(intervalId);
+        return window.location.assign("end.html")
+    }
 }
 
 const wrongTime = 10;
