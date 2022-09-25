@@ -17,11 +17,13 @@
 <body>
     <div class="container">
         <h1>All done!</h1>
-        <h2>Your final score is </h2>
+        <h2>Your final score is <span id="finalScore"></span>.</h2>
         <form>
             <input type="text" name="username" id="username" placeholder="Enter initials here">
-            <button type="submit" class="button" id="saveScoreButton" onclick="saveHighScore(event)">Submit</button>
+            <button type="submit" class="button" id="saveScoreButton" onclick="saveHighScore(event)" disabled>Submit</button>
         </form>
+        <a class="button" href="/">Go Home</a>
+        <button class="button">Clear Highscores</button>
     </div>
     <script src="end.js"></script>    
 </body>

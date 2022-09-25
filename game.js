@@ -37,7 +37,7 @@ beginGame = () => {
 
 nextQuestion = () => {
     if (availableQuestions.length === 0) {
-        return window.location.assign("/totalscore.html");
+        return window.location.assign("end.html");
     }
     
     questionCounter++;
