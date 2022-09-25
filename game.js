@@ -1,11 +1,15 @@
 var question = document.getElementById('question');
 var answers = Array.from(document.getElementsByClassName("answer-text"));
+// const scoreText = document.getElementById('score');
+
+
 
 const wrongTime = 10;
-let = acceptAnswers = true;
-let = score = 0;
-let = availableQuestions = [];
-let = currentQuestion = {};
+let acceptAnswers = true;
+let score = 0;
+let availableQuestions = [];
+let currentQuestion = {};
+let bonus = 10;
 
 let questions = [
     {
@@ -39,6 +43,7 @@ nextQuestion = () => {
     if (availableQuestions.length === 0) {
         return window.location.assign("end.html");
     }
+    localStorage.setItem("score", score);
     
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -57,13 +62,18 @@ answers.forEach(answer => {
     answer.addEventListener("click", click => {
         var choice = click.target;
         var selectedAnswer = choice.dataset["number"]
-        console.log(selectedAnswer)
+        
+        increaseScore = num => {
+        score +=num;
+        score.innerText = score;
+        }
         
         
         
         if (selectedAnswer === currentQuestion.answer) {
             // document.getElementById("correct").innerText = "Correct!";
             verdict = "Correct!";
+            increaseScore(bonus);
         } else {
             verdict = "Wrong!"
         }
@@ -75,12 +85,14 @@ answers.forEach(answer => {
                
         // nextQuestion();
         
-        const reload = setTimeout(nextQuestion, 3000);
+        const reload = setTimeout(nextQuestion, 1500);
 
 
 
 
     })
+
+    
 })
 
 beginGame ();
