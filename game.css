@@ -4,4 +4,10 @@
     color: white;
     border-radius: 5px;
     border: 1px solid white;
+
+}
+
+#hud {
+    display: flex;
+    justify-content: space-between;
 }
