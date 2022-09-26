@@ -2,7 +2,7 @@ var question = document.getElementById('question');
 var answers = Array.from(document.getElementsByClassName("answer-text"));
 // const scoreText = document.getElementById('score');
 var timerEl = document.querySelector('.timer-count')
-var timeLeft = 10;
+var timeLeft = 30;
 var intervalId
 
 function startCountdown() {
@@ -48,7 +48,45 @@ let questions = [
         answer3: "3. 1977",
         answer4: "4. 1978",
         correctAnswer: 2
-    }
+    },
+    {
+        question: "Who was the first host of The Tonight Show?",
+        answer1: "1. Steve Allen",
+        answer2: "2. Jack Paar",
+        answer3: "3. Johnny Carson",
+        answer4: "4. Jay Leno",
+        correctAnswer: 1
+    },
+    {
+        question: "Which small country is located between the borders of France and Spain?",
+        answer1: "1. Vatican City",
+        answer2: "2. Luxembourg",
+        answer3: "3. Liechtenstein",
+        answer4: "4. Andorra",
+        correctAnswer: 4
+    },
+    {
+        question: "Which small country is located between the borders of France and Spain?",
+        answer1: "1. Vatican City",
+        answer2: "2. Luxembourg",
+        answer3: "3. Liechtenstein",
+        answer4: "4. Andorra",
+        correctAnswer: 4
+    },{
+        question: "Who Was The 1st Wife of Henry VIII?",
+        answer1: "1. Catherine of Aragon",
+        answer2: "2. Anne Boleyn",
+        answer3: "3. Jane Seymour",
+        answer4: "4. Anne of Cleves",
+        correctAnswer: 1
+    },{
+        question: "Who was the teacher of Alexander the Great?",
+        answer1: "1. Socrates",
+        answer2: "2. Plato",
+        answer3: "3. Aristotle",
+        answer4: "4. Archimedes",
+        correctAnswer: 3
+    },
 ]
 
 
