@@ -2,7 +2,7 @@ var question = document.getElementById('question');
 var answers = Array.from(document.getElementsByClassName("answer-text"));
 // const scoreText = document.getElementById('score');
 var timerEl = document.querySelector('.timer-count')
-var timeLeft = 30;
+var timeLeft = 10;
 var intervalId
 
 function startCountdown() {
@@ -10,12 +10,20 @@ function startCountdown() {
     intervalId = setInterval(function() {
     timeLeft--
     timerEl.textContent = timeLeft
-    }, 1000)
+    
     if (timeLeft === 0) {
-        // clearInterval(intervalId);
-        return window.location.assign("end.html")
+        clearInterval(intervalId);
+        return window.location.assign("end.html");
     }
+    }, 1000)
+    
+    console.log(timeLeft)
 }
+
+
+
+
+
 
 const wrongTime = 10;
 let acceptAnswers = true;
