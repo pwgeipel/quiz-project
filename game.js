@@ -17,7 +17,7 @@ function startCountdown() {
     }
     }, 1000)
     
-    console.log(timeLeft)
+
 }
 
 
