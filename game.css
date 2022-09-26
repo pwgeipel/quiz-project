@@ -1,10 +1,18 @@
 .answer-box {
-    width: 100%;
-    background-color: purple;
+    width: 400px;
+    background-color: rgb(94, 19, 94);
     color: white;
     border-radius: 5px;
     border: 1px solid white;
+    text-align: left;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 20px;
 
+}
+
+.answer-box:hover {
+    background-color: rgb(171, 93, 171);
 }
 
 #hud {
@@ -14,4 +22,27 @@
 
 header {
     padding: 10px;
+}
+
+input {
+    width: 148px;
+    height: 33px;
+    padding: 5px;
+}
+
+#viewHighScores {
+    text-decoration: none;
+    color: black;
+}
+
+#game {
+    width: 400px;
+}
+
+#question {
+    margin-bottom: 15px;
+}
+
+.timer-count {
+    font-size: large;
 }

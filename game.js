@@ -107,7 +107,7 @@ answers.forEach(answer => {
                
         // nextQuestion();
         
-        const reload = setTimeout(nextQuestion, 1500);
+        const reload = setTimeout(nextQuestion, 500);
 
 
 

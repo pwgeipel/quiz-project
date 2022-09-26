@@ -1,5 +1,5 @@
 :root {
-    background-color: rgb(112, 231, 231);
+    background-color: rgb(153, 214, 203);
 }
 
 * {
@@ -9,11 +9,11 @@
     padding: 0;
 }
 
-/* h1 {
+h1 {
     text-align: center;
 }
 
-h2 {
+/* h2 {
 
 } */
 
@@ -25,6 +25,7 @@ h2 {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding: 50px;
 }
 
 .button {
@@ -34,15 +35,23 @@ h2 {
     display: inline-block;
     border-radius: 5px;
     border: 1px solid white;
-    background-color: purple;
+    background-color: rgb(94, 19, 94);
     color: white;
     text-decoration: none;
     margin: 5px;
     text-align: center;
 }
+.button:hover {
+    background-color: rgb(171, 93, 171);
+}
+
 
 .verdict {
     font-size: 20px;
     color: gray;
     height: 10px;
+}
+
+a {
+    text-decoration: none;
 }
