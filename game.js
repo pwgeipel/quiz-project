@@ -1,8 +1,7 @@
 var question = document.getElementById('question');
 var answers = Array.from(document.getElementsByClassName("answer-text"));
-// const scoreText = document.getElementById('score');
 var timerEl = document.querySelector('.timer-count')
-var timeLeft = 30;
+var timeLeft = 60;
 var intervalId
 
 function startCountdown() {
@@ -16,14 +15,7 @@ function startCountdown() {
         return window.location.assign("end.html");
     }
     }, 1000)
-    
-
 }
-
-
-
-
-
 
 const wrongTime = 10;
 let acceptAnswers = true;
@@ -128,18 +120,18 @@ answers.forEach(answer => {
 
         increaseScore = (num) => {
         score +=num;
-        score.innerText = score;
+        // score.innerText = score;
         localStorage.setItem("score", score);
         }
         
         
         
         if (selectedAnswer == currentQuestion.correctAnswer) {
-            // document.getElementById("correct").innerText = "Correct!";
             verdict = "Correct!";
             increaseScore(bonus);
         } else {
-            verdict = "Wrong!"
+            verdict = "Wrong!";
+            timeLeft -= 10;
         }
 
 
