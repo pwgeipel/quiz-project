@@ -103,7 +103,7 @@ nextQuestion = () => {
     if (availableQuestions.length === 0) {
         return window.location.assign("end.html");
     }
-    localStorage.setItem("score", score);
+    
     
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -126,14 +126,15 @@ answers.forEach(answer => {
         
 
 
-        increaseScore = num => {
+        increaseScore = (num) => {
         score +=num;
         score.innerText = score;
+        localStorage.setItem("score", score);
         }
         
         
         
-        if (selectedAnswer === currentQuestion.answer) {
+        if (selectedAnswer == currentQuestion.correctAnswer) {
             // document.getElementById("correct").innerText = "Correct!";
             verdict = "Correct!";
             increaseScore(bonus);
