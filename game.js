@@ -85,6 +85,9 @@ answers.forEach(answer => {
         var choice = click.target;
         var selectedAnswer = choice.dataset["number"]
         
+        
+
+
         increaseScore = num => {
         score +=num;
         score.innerText = score;
