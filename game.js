@@ -4,19 +4,20 @@ var timerEl = document.querySelector('.timer-count')
 var timeLeft = 60;
 var intervalId
 
+//This initializes a timer, counting down one second at a time.
 function startCountdown() {
     clearInterval(intervalId)
     intervalId = setInterval(function() {
     timeLeft--
     timerEl.textContent = timeLeft
-    
-    if (timeLeft === 0) {
+//Once the timer reaches zero, the game goes to the "end page"    
+    if (timeLeft < 1) {
         clearInterval(intervalId);
         return window.location.assign("end.html");
     }
     }, 1000)
 }
-
+//These establish a starting score of 0, a time penalty of 10 seconds, and a point bonus of 10 points.
 const wrongTime = 10;
 let acceptAnswers = true;
 let score = 0;
@@ -24,6 +25,7 @@ let availableQuestions = [];
 let currentQuestion = {};
 let bonus = 10;
 
+//This is the array of questions
 let questions = [
     {
         question: "Which of the following was NOT directed by Charlie Chaplin?",
@@ -50,11 +52,11 @@ let questions = [
         correctAnswer: 1
     },
     {
-        question: "Which small country is located between the borders of France and Spain?",
-        answer1: "1. Vatican City",
-        answer2: "2. Luxembourg",
-        answer3: "3. Liechtenstein",
-        answer4: "4. Andorra",
+        question: "What is the tallest mountain in South America?",
+        answer1: "1. Ojos del Salado",
+        answer2: "2. Monte Pissis",
+        answer3: "3. Huascaran",
+        answer4: "4. Aconcagua",
         correctAnswer: 4
     },
     {
@@ -80,9 +82,7 @@ let questions = [
         correctAnswer: 3
     },
 ]
-
-
-
+//When the game begins, the score is 0, questions are taken from the available questions array, and the countdown starts.
 beginGame = () => {
     score = 0;
     questionCounter = 0;
@@ -90,13 +90,13 @@ beginGame = () => {
     nextQuestion ();
     startCountdown();
 }
-
+//The next question is taken from the array.  When the list of available question reaches 0, the end page automatically launches.
 nextQuestion = () => {
     if (availableQuestions.length === 0) {
         return window.location.assign("end.html");
     }
     
-    
+//The next question is taken randomly from the questions array    
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -110,45 +110,28 @@ nextQuestion = () => {
 
     acceptAnswers = true;
 }
+//Event listener for selecting an answer
 answers.forEach(answer => {
     answer.addEventListener("click", click => {
         var choice = click.target;
         var selectedAnswer = choice.dataset["number"]
-        
-        
-
-
+//This increases the score with each correct answer.        
         increaseScore = (num) => {
         score +=num;
-        // score.innerText = score;
         localStorage.setItem("score", score);
         }
-        
-        
-        
+//If the answer is correct, a bonus is awarded.        
         if (selectedAnswer == currentQuestion.correctAnswer) {
             verdict = "Correct!";
             increaseScore(bonus);
         } else {
+        //If the answer is wrong, 10 seconds is removed.    
             verdict = "Wrong!";
             timeLeft -= 10;
         }
-
-
-
-        document.getElementsByClassName("verdict").innerText = verdict;
-        
-               
-        // nextQuestion();
-        
+//The page loads the next question 0.5 seconds after the current question is answered.
         const reload = setTimeout(nextQuestion, 500);
-
-
-
-
-    })
-
-    
+    })    
 })
-
+//The game starts immeadiately after loading the page
 beginGame ();
