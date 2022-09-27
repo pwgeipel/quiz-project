@@ -15,7 +15,7 @@ if (localStorage.getItem('High Scores')) {
 }
 //Saves high score and initials to local storage
 function saveInitials() {
-    scores.push('Initials: ${username.value) || Score: $(score)');
+    scores.push(`Initials: ${username.value} || Score: ${score}`);
     localStorage.setItem('High Scores', scores);
 }
 //Allows submission after something has been entered into input field
