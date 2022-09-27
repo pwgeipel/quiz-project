@@ -6,4 +6,4 @@ This page is a multiple choice quiz.  Once the user hits the "Start Quiz" button
 
 
 
-![screenshot of Peter Geipel's Quiz](assets.ScreenShot.jpg)
+![screenshot of Peter Geipel's Quiz](assets/ScreenShot.jpg)
